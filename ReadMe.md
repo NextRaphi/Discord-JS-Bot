@@ -53,7 +53,7 @@ This project is permanently updated and therefore receives new features almost e
 
 - Download the project
 
-- Open .env file and put your Bot Token in the ```TOKEN=``` line and the clientId in the ```CLIENT_ID=``` line
+- Open config.js file and put your Bot Token in the ```TOKEN=``` line and the clientId in the ```CLIENT_ID=``` line
 
 - Open cmd
   > **cd (Path to the project)**
