@@ -5,7 +5,8 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('setup-verify')
         .setDescription('Setup Verify Command')
-        .addRoleOption(option => option.setName('role').setDescription('The role to give to the user').setRequired(true)),
+        .addRoleOption(option => option.setName('role').setDescription('The role to give to the user').setRequired(true))
+        .setDMPermission(false),
 
     run: async ({interaction, client}) => {
         const role = interaction.options.getRole('role');

@@ -4,7 +4,8 @@ const config = require('../../config/config.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('claim')
-        .setDescription('Du übernimmst das Ticket'),
+        .setDescription('Du übernimmst das Ticket')
+        .setDMPermission(false),
 
         run: ({ interaction }) => {
             if (!interaction.member.roles.cache.has(config.Permissions.staffid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});

@@ -7,7 +7,8 @@ module.exports = {
     .setDescription('Mutes a member for every channel | example 1000 = 1 second')
     .addUserOption(option => option.setName('user').setDescription('The user to mute').setRequired(true))
     .addStringOption(option => option.setName('reason').setDescription('The reason for muting').setRequired(true))
-    .addStringOption(option => option.setName('time').setDescription('The time for muting or write perm for a permanent mute').setRequired(true)),
+    .addStringOption(option => option.setName('time').setDescription('The time for muting or write perm for a permanent mute').setRequired(true))
+    .setDMPermission(false),
 
     run: ({interaction}) => {
         if (!interaction.member.roles.cache.has(config.Permissions.staffid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});

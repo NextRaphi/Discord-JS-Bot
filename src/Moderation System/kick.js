@@ -6,7 +6,8 @@ module.exports = {
     .setName('kick')
     .setDescription('Kicks a member')
     .addUserOption(option => option.setName('user').setDescription('The user to kick').setRequired(true))
-    .addStringOption(option => option.setName('reason').setDescription('The reason for kicking')),
+    .addStringOption(option => option.setName('reason').setDescription('The reason for kicking'))
+    .setDMPermission(false),
 
     run: ({interaction}) => {
         if (!interaction.member.roles.cache.has(config.Permissions.adminid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});

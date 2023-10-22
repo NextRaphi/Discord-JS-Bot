@@ -6,7 +6,8 @@ module.exports = {
         .setName('deadd')
         .setDescription('Removed a user from a ticket')
         .addUserOption(option => option.setName('user').setDescription('Choose a user').setRequired(false))
-        .addRoleOption(option => option.setName('role').setDescription('Choose a role').setRequired(false)),
+        .addRoleOption(option => option.setName('role').setDescription('Choose a role').setRequired(false))
+        .setDMPermission(false),
 
         run: ({interaction}) => {
             if (!interaction.member.roles.cache.has(config.Permissions.staffid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});

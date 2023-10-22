@@ -6,7 +6,8 @@ module.exports = {
     .setName('role-add')
     .setDescription('Add a role to a user')
     .addUserOption(option => option.setName('user').setDescription('Choose a user').setRequired(true))
-    .addRoleOption(option => option.setName('role').setDescription('Choose a role').setRequired(true)),
+    .addRoleOption(option => option.setName('role').setDescription('Choose a role').setRequired(true))
+    .setDMPermission(false),
 
     run: ({interaction}) => {
         if (!interaction.member.roles.cache.has(config.Permissions.adminid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});

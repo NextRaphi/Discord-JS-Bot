@@ -5,7 +5,8 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('rename')
         .setDescription('Change the name of a channel')
-        .addStringOption(option => option.setName('name').setDescription('Name').setRequired(true)),
+        .addStringOption(option => option.setName('name').setDescription('Name').setRequired(true))
+        .setDMPermission(false),
 
         run: ({interaction}) => {
             if (!interaction.member.roles.cache.has(config.Permissions.staffid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});
