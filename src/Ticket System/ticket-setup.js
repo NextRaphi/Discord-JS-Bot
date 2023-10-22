@@ -1,4 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder } = require("discord.js");
+const config = require('../../config/config.js');
 
 const { SlashCommandBuilder } = require("discord.js");
 
@@ -9,6 +10,7 @@ module.exports = {
         .setDMPermission (false),
 
         run: ({interaction}) => {
+            if (!interaction.member.roles.cache.has(config.Permissions.adminid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});
             const ticketembed = new EmbedBuilder()
             .setTitle('Ahla Ticket Menu')
             .setAuthor({name: `Ahla | System` })

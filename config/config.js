@@ -11,6 +11,7 @@ Moderation: {
 
 Permissions: {
     staffid: '1161235528394477619',
+    adminid: '1161229693987590154',
 },
 
 TicketSystem: {

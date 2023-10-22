@@ -1,4 +1,5 @@
 const {SlashCommandBuilder} = require('discord.js');
+const config = require('../../config/config.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -8,6 +9,7 @@ module.exports = {
         .addRoleOption(option => option.setName('role').setDescription('Choose a role').setRequired(false)),
 
         run: ({interaction}) => {
+            if (!interaction.member.roles.cache.has(config.Permissions.staffid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});
             const user = interaction.options.getUser('user');
             const role = interaction.options.getRole('role');
             const channel = interaction.channel;

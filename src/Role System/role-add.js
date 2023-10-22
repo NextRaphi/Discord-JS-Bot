@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const config = require('../../config/config.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -8,6 +9,7 @@ module.exports = {
     .addRoleOption(option => option.setName('role').setDescription('Choose a role').setRequired(true)),
 
     run: ({interaction}) => {
+        if (!interaction.member.roles.cache.has(config.Permissions.adminid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});
         const user = interaction.options.getUser('user');
         const role = interaction.options.getRole('role');
         const guild = interaction.guild;
@@ -16,5 +18,8 @@ module.exports = {
             guild.members.cache.get(user.id).roles.add(role);
             interaction.reply({content: `The role ${role} was successfully added to ${user}!`, ephemeral: true});
         }
+
+        //if the command dont work, try to give the bot a higher role with more permissions.
+
     }
 };

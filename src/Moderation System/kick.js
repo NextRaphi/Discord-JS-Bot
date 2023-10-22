@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const config = require('../../config/config.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -8,7 +9,7 @@ module.exports = {
     .addStringOption(option => option.setName('reason').setDescription('The reason for kicking')),
 
     run: ({interaction}) => {
-        
+        if (!interaction.member.roles.cache.has(config.Permissions.adminid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});
         const user = interaction.options.getUser('user');
         const reason = interaction.options.getString('reason') || 'No reason provided';
         const member = interaction.guild.members.cache.get(user.id);

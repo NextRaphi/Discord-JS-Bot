@@ -46,14 +46,16 @@ const rest = new REST({
     body: slashcommands
   })
 
-  .then(() => console.log('Successfully registered application commands.'))
+  .then(() => console.log('Commands successfully registered and loaded!'))
   .catch(console.error);
 
 
 client.on('ready', () => {
 
-    client.user.setActivity('Source by AhlaVintage#1111', { type: ActivityType.Playing });
+    client.user.setActivity('Source Code by AhlaVintage#1111', { type: ActivityType.Playing });
     client.user.setStatus('dnd');
+   // client.user.setAvatar('./config/AhlaLogo.jpeg');
+   // client.user.setUsername('AhlaVintage.system');
     console.log(`Logged in as ${client.user.tag}!`);
 });
 

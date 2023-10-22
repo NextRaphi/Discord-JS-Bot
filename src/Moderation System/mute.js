@@ -10,6 +10,7 @@ module.exports = {
     .addStringOption(option => option.setName('time').setDescription('The time for muting or write perm for a permanent mute').setRequired(true)),
 
     run: ({interaction}) => {
+        if (!interaction.member.roles.cache.has(config.Permissions.staffid)) return interaction.reply({content: 'You don`t have the permissions for this command', ephemeral: true});
         const user = interaction.options.getUser('user');
         const reason = interaction.options.getString('reason') || 'No reason provided';
         const time = interaction.options.getString('time') || 'No time provided';
