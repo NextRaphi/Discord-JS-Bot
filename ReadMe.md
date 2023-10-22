@@ -31,6 +31,11 @@ This project is permanently updated and therefore receives new features almost e
 
 - Install Node.js
 
+| Version  | Download             |
+| -------- | -------------------- |
+|  Latest  |  [Download][nodejs]  |
+
+
 - Open cmd and type ```node -v``` to check if Node.js is installed correctly
 
 - Open cmd and type ```npm -v``` to check if npm is installed correctly
