@@ -383,6 +383,26 @@ if (interaction.isButton()) {
   }
 
 
+
+
+
+  //==========================================================================================================
+/// ======================================= Verify =========================================================
+//==========================================================================================================
+
+if (interaction.isButton()) {
+  if (interaction.customId === 'verify') {
+    if (interaction.member.roles.cache.has(config.VerifySystem.verifyrole)) {
+      interaction.reply({ content: `You already verified.`, ephemeral: true });
+    } else {
+      interaction.member.roles.add(config.VerifySystem.verifyrole);
+
+      interaction.reply({ content: `You are verified now.`, ephemeral: true });
+    }
+  }
+}
+
+
 });
 
 

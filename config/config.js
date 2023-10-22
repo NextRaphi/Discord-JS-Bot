@@ -24,6 +24,10 @@ TicketSystem: {
     }
 },
 
+VerifySystem: {
+    verifyrole: '1161229604791525426',
+},
+
 DiscountCodes: {
     codes: [
         [

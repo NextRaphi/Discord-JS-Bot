@@ -25,6 +25,18 @@ This project is permanently updated and therefore receives new features almost e
 - [x] Verify System ✅
 - [x] Security System 🛡
 
+## Install Node.js
+
+- Go to [Node.js](https://nodejs.org/en/) and download the latest version
+
+- Install Node.js
+
+- Open cmd and type ```node -v``` to check if Node.js is installed correctly
+
+- Open cmd and type ```npm -v``` to check if npm is installed correctly
+
+- 🎉**Now Node.js is installed and you can start to setup the Bot**🎉
+
 ## Create a Bot
 
 - Go to [Discord Developer Portal](https://discord.com/developers/applications) and create a new Application
@@ -46,7 +58,7 @@ This project is permanently updated and therefore receives new features almost e
 - Go to the Bot Section and enable the Privileged Gateway Intents
   - Enable the ```PRESENCE INTENT``` and the ```SERVER MEMBERS``` INTENT
 
- **Next Step is to setup the Project**
+- 🎉**Now the Bot is created and you can start to setup the Project**🎉
 
 
 ## Setup Project
