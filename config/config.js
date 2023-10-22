@@ -7,5 +7,29 @@ bot_start: {
 
 Moderation: {
     muteroleid: '1165389366881959966',
+},
+
+Permissions: {
+    staffid: '1161235528394477619',
+},
+
+TicketSystem: {
+    ticketlogs: '1163442314597896253',
+
+    TicketCategory: {
+        support: '1163243877835231232',
+        application: '1163243877835231232',
+        productpurchase: '1163243877835231232',
+    }
+},
+
+DiscountCodes: {
+    codes: [
+        [
+            code1 = '1YeaR@2023',
+            code2 = 'AhlaVintage@2023',
+        ]
+    ]
 }
+
 }
