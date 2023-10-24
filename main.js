@@ -422,7 +422,8 @@ if (interaction.isButton()) {
 
 
 client.on('guildMemberAdd', async member => {
-  if (config.SecuritySystem.Features.welcomemessage.join === 'off') return console.log('INFO: Welcome Message is off, no Welcome Message Log was send!');
+  if (config.WelcomeSystem.status === 'off') return console.log('INFO: Welcome Message is off, no Welcome Message Log was send!');
+  if (config.WelcomeSystem.welcomechannelid === '') return console.log('INFO: Welcome channelid is empty, no Welcome Message Log was send!');
   const channel = member.guild.channels.cache.get(config.SecuritySystem.securitylogs);
   const embed = new EmbedBuilder()
   .setTitle('Member Joined')
@@ -481,6 +482,9 @@ client.on('guildMemberRemove', async member => {
 client.on('messageUpdate', async (oldMessage, newMessage) => {
   if (config.SecuritySystem.Logs.messageUpdate === 'off') return console.log('INFO: Message Update is off, no Message Update Log was send!');
   const channel = oldMessage.guild.channels.cache.get(config.SecuritySystem.securitylogs);
+
+  const context = "```";
+
   const embed = new EmbedBuilder()
   .setTitle('Message Update')
   .setAuthor({ name: 'Ahla | System' })
@@ -491,8 +495,8 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
     { name: 'Message Author Tag:', value: `${oldMessage.author.tag}`, inline: true },
     { name: 'Message Author Created:', value: `${oldMessage.author.createdAt}`, inline: true },
     { name: 'Message Author Joined:', value: `${oldMessage.member.joinedAt}`, inline: true },
-    { name: 'Old Message:', value: `${oldMessage.content}`, inline: true },
-    { name: 'New Message:', value: `${newMessage.content}`, inline: true },
+    { name: 'Old Message:', value: context + `${oldMessage.content}` + context, inline: false },
+    { name: 'New Message:', value: context + `${newMessage.content}` + context, inline: false },
 
   )
   .setColor('#082ebd')
@@ -747,6 +751,7 @@ client.on('messageCreate', async message => {
 //====================================================================================================================================================================================================================================\\
 //====================================================================================================================================================================================================================================\\
 //====================================================================================================================================================================================================================================\\
+
 
 
 
