@@ -15,6 +15,9 @@ Permissions: {
 },
 
 TicketSystem: {
+    logstatus:{
+        status: 'on', // on or off - if off, the bot will not log tickets
+    },
     ticketlogs: '',
 
     TicketCategory: {
@@ -24,9 +27,59 @@ TicketSystem: {
     }
 },
 
+WelcomeSystem: {
+    status: 'on', // on or off - if off, the bot will not send welcome messages
+    welcomechannelid: '',
+},
+
 VerifySystem: {
     verifyrole: '',
 },
+
+SecuritySystem: {
+    securitylogs: '',
+
+    Features: {
+        modsystem: {
+            ban: 'on', // on or off - if off, the bot will not log bans
+            kick: 'on', 
+            unban: 'on', 
+            clear: 'on',
+            mute: 'on',
+        },
+        rolesystem: {
+            roleadd: 'on',
+            roleremove: 'on',
+        },
+
+
+    },
+
+
+
+    Logs: {
+        // welcome | leave
+        join: 'on',
+        leave: 'on',
+
+        // messages
+        messageUpdate: 'on',
+        messageDelete: 'on',
+
+        // Roles
+        roleAdd: 'on',
+        roleRemove: 'on',
+        roleCreate: 'on',
+        roleDelete: 'on',
+        roleUpdated: 'on',
+
+        // Channels
+        channelCreate: 'on',
+        channelDelete: 'on',
+        channelUpdate: 'on',
+    },
+},
+
 
 DiscountCodes: {
     codes: [
