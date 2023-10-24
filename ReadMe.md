@@ -88,4 +88,4 @@ If you have any problems to start or setup this Bot, open a ticket to get [help]
 [support]: https://discord.gg/ydXcwyNT7V
 [javascript]: https://developer.mozilla.org/en-US/docs/Web/JavaScript?retiredLocale=de
 [discordjs]: https://discordjs.guide/#before-you-begin
-[nodejs]: https://nodejs.org/en/download
+[nodejs]: https://nodejs.org/en/download/
